@@ -1,0 +1,16 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 107%;
+}
+
+.container *{
+    margin: 0;
+}
+
+.item{
+    text-align: center;
+    padding: 5px 20px;
+    width: 100%;
+}
