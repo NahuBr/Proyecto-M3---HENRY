@@ -1,0 +1,97 @@
+.container{
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    height: 580px;
+    justify-content: flex-end;
+    background-image: url('../../assets/bg_login1.jpg');
+}
+
+.subcontainer{
+    background-color: rgba(255, 255, 255, 0.8);
+    height: 250px;
+}
+
+.title{
+    font-size: 26px;
+    color: white;
+    margin-left: 50px;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.text{
+    font-size: 18px;
+    color: white;
+    margin-top: 30px;
+    margin-left: 50px;
+}
+
+.window{
+    background-color: rgb(48, 117, 138);
+    width: 350px;
+    height: 95px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 10vh;
+    margin-right: 15vw;
+    display: block;
+    text-align: start;
+}
+
+.form{
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+}
+
+.input{
+    margin-left: 50px;
+    margin-top: 10px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    font-weight: bold;
+}
+
+.button{
+    width: 250px;
+    height: 40px;
+    margin-left: 50px;
+    background-color: rgb(24, 134, 168);
+    border: none;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    border-radius: 3px;
+}
+
+.button:hover{
+    cursor: pointer;
+}
+
+body{
+    background-color: rgb(218, 240, 240);
+}
+
+.registerButton{
+    display: flex;
+    justify-self: center;
+    text-decoration: none;
+    color: black;
+    width: 110px;
+    height: 50px;
+    font-size: 20px;
+}
+
+.p{
+    justify-self: center;
+    margin-top: 15px;
+}
+
+.registerButton:hover {
+    cursor: pointer;
+}
