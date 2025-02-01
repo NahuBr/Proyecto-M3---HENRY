@@ -8,7 +8,7 @@ import defaultImage from '../../assets/defaultUser.webp'
 
 function Profile(){
 
-    const baseUrl = 'http://localhost:3000';
+    const baseUrl = 'http://proyecto-m3-henry-production.up.railway.app:8080';
 
     const navigate = useNavigate()
     const fileInputRef = useRef(null);
@@ -41,7 +41,7 @@ function Profile(){
 
             const fetchRegisterData = (async () => {
                 try{
-                    const response = await axios.post("http://localhost:3000/upload",formData)
+                    const response = await axios.post("http://proyecto-m3-henry-production.up.railway.app:8080/upload",formData)
                     const newImagePath = response.data;
 
                     updateUserProfile(newImagePath);

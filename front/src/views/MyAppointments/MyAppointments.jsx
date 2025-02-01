@@ -26,7 +26,7 @@ export const MyAppointments = ()=>{
 
     const updateAppointments = async () => {
         try {
-            const response = await axios.get("http://localhost:3000/appointments");
+            const response = await axios.get("http://proyecto-m3-henry-production.up.railway.app:8080/appointments");
             const result = response.data.filter((element) => element.user.id === user.id);
             setTurns(result);
         } catch (error) {
