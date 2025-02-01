@@ -8,7 +8,7 @@ export const Turn = ({turn,updateAppointments})=>{
             try{
                 const data = {id:turn.id}
                 
-                const response = await axios.put("http://proyecto-m3-henry-production.up.railway.app:8080/appointments/cancel",data)
+                const response = await axios.put("http://proyecto-m3-henry-production.up.railway.app/appointments/cancel",data)
                 alert(response.data+" Correctamente")
                 updateAppointments()
             }catch(error){

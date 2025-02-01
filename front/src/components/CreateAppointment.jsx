@@ -23,7 +23,7 @@ export const CreateAppointment = ({handleClose,userid,updateAppointments}) => {
         event.preventDefault()
         const fetchData = (async ()=>{
             try{
-                const response = await axios.post("http://proyecto-m3-henry-production.up.railway.app:8080/appointments/schedule",input)
+                const response = await axios.post("http://proyecto-m3-henry-production.up.railway.app/appointments/schedule",input)
                 alert(response.data)
                 updateAppointments()
                 handleClose()
