@@ -26,7 +26,7 @@ export const MyAppointments = ()=>{
 
     const updateAppointments = async () => {
         try {
-            const response = await axios.get("http://proyecto-m3-henry-production.up.railway.app/appointments");
+            const response = await axios.get("https://proyecto-m3-henry-production.up.railway.app/appointments");
             const result = response.data.filter((element) => element.user.id === user.id);
             setTurns(result);
         } catch (error) {

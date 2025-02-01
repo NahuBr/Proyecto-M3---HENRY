@@ -43,7 +43,7 @@ export const Register = ()=>{
     event.preventDefault();
     const fetchRegisterData = (async () => {
       try{
-        const response = await axios.post("http://proyecto-m3-henry-production.up.railway.app/users/register",newUser)
+        const response = await axios.post("https://proyecto-m3-henry-production.up.railway.app/users/register",newUser)
         alert(response.data)
         navigate("/")
       }catch(error){

@@ -30,7 +30,7 @@ export const Login = ()=>{
             event.preventDefault();
             const fetchLoginData = (async () => {
             try{                
-                const response = await axios.post("http://proyecto-m3-henry-production.up.railway.app/users/login",input)                
+                const response = await axios.post("https://proyecto-m3-henry-production.up.railway.app/users/login",input)                
                 connectUser(response.data)
                 navigate("/home")
             }catch(error){
