@@ -49,7 +49,7 @@ export const SumarPuntosService = async(points:number,id:number):Promise<User>=>
         id:id
     })
         if(user){
-            user.points +=points
+            user.points = (user.points || 0) + points;
             await UserModel.save(user)
             return user
         }else{
