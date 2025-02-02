@@ -9,8 +9,7 @@ import { registerCredentialService } from "./credentialsService"
 export const getUsersService = async():Promise<User[]>=>{
     const users:User[] = await UserModel.find({
         relations:{
-            credential:true,
-            appointments:true
+            credential:true
         }
     });
     return users
@@ -32,7 +31,7 @@ export const registerUserService = async(userdata:userdata):Promise<User>=>{
     const result:User = await UserModel.save(newUser)
     return result
 }
-
+ 
 export const loginUserService = async(credential:Credential):Promise<User>=>{
     const user = await UserModel.findOneBy({
         credential:credential
@@ -45,19 +44,15 @@ export const loginUserService = async(credential:Credential):Promise<User>=>{
     }
 }
 
-export const updateUserProfilePicture = async (userId: number, imagePath: string): Promise<string> => {
-
-  try {
-    const user = await UserModel.findOneBy({id:userId});
-    if (!user) {
-      throw new Error("Usuario no encontrado");
-    }
-
-    user.profilePicture = imagePath;
-    const result = await UserModel.save(user);
-
-    return user.profilePicture
-  } catch (error) {
-    throw new Error("Error al actualizar la imagen del usuario");
-  }
-};
+export const SumarPuntosService = async(points:number,id:number):Promise<User>=>{
+    const user = await UserModel.findOneBy({
+        id:id
+    })
+        if(user){
+            user.points +=points
+            await UserModel.save(user)
+            return user
+        }else{
+            throw new Error("Usuario no encontrado")
+        }
+}

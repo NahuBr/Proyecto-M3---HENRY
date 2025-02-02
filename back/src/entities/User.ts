@@ -1,6 +1,5 @@
 import { Column, Entity, JoinColumn, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm"
 import { Credential } from "./Credential"
-import { Appointment } from "./Appointment"
 
 @Entity({
     name:"users"
@@ -19,21 +18,13 @@ export class User{
     })
     email:string
 
-    @Column({
-        length:20
-    })
-    birthdate:string
-
-    @Column("integer")
-    nDni:number
-
     @OneToOne(()=>Credential)
     @JoinColumn()
     credential:Credential
 
-    @OneToMany(()=>Appointment,(appointment=>appointment.user))
-    appointments:Appointment[]
+    @Column()
+    points:number
 
-    @Column({ type: 'varchar', nullable: true })
-    profilePicture: string | null;
+    @Column()
+    admin:boolean
 }

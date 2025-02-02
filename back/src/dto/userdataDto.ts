@@ -4,6 +4,6 @@ import { ICredential } from "../interfaces/ICredential"
 export type userdata={
     name:string,
     email:string,
-    birthdate:string,
-    nDni:number,
+    points:number,
+    admin:boolean,
 }

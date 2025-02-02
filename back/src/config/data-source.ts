@@ -1,7 +1,6 @@
 import { DataSource } from "typeorm";
 import { User } from "../entities/User";
 import { Credential } from "../entities/Credential";
-import { Appointment } from "../entities/Appointment";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -10,7 +9,7 @@ export const AppDataSource = new DataSource({
     url: process.env.DATABASE_URL,  // Usa la URL completa de conexión de la base de datos
     synchronize: true,              // Sincroniza automáticamente las tablas (en desarrollo)
     logging: false,                 // Desactiva los logs (cámbialo a true para depuración)
-    entities: [User, Credential, Appointment],
+    entities: [User, Credential],
     subscribers: [],
     migrations: [],
 });
@@ -18,4 +17,3 @@ export const AppDataSource = new DataSource({
 // Repositorios para interactuar con las entidades
 export const UserModel = AppDataSource.getRepository(User);
 export const CredentialModel = AppDataSource.getRepository(Credential);
-export const AppointmentModel = AppDataSource.getRepository(Appointment);

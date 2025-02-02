@@ -1,12 +1,8 @@
 import { Request, Response } from "express";
-import { IUser } from "../interfaces/IUser";
-import { getUserService, getUsersService, loginUserService, registerUserService, updateUserProfilePicture } from "../services/usersService";
-import { userdata } from "../dto/userdataDto";
+import { getUserService, getUsersService, loginUserService, registerUserService, SumarPuntosService } from "../services/usersService";
 import { loginCredentialService, registerCredentialService } from "../services/credentialsService";
 import { User } from "../entities/User";
 import { Credential } from "../entities/Credential";
-import { UserModel } from "../config/data-source";
-import { report } from "process";
 
 export const getUsers = async (req:Request,res:Response):Promise<void>=>{
     try{
@@ -31,11 +27,13 @@ export const getUser = async (req:Request,res:Response):Promise<void>=>{
 }
 export const registerUser = async (req:Request,res:Response):Promise<void>=>{
     try{
-        const {name,email,birthdate,nDni,credential} = req.body
-        if(!name||!email||!birthdate||!nDni||!credential.username||!credential.password){
+        const {name,email,credential} = req.body
+        const points:number = 0
+        const admin:boolean = false
+        if(!name||!email||!credential.username||!credential.password){
             res.status(400).json("Campos incompletos.")
         }else{
-            const newUser:User = await registerUserService({name,email,birthdate,nDni})
+            const newUser:User = await registerUserService({name,email,points,admin})
             await registerCredentialService(credential.username,credential.password,newUser.id)
             
             res.status(200).send(`Usuario ${newUser.name} registrado correctamente.`)
@@ -64,17 +62,18 @@ export const loginUser = async (req:Request,res:Response):Promise<void>=>{
     }
 }
 
-
-export const uploadProfilePicture = async (req: Request, res: Response):Promise<void> => {
+export const SumarPuntosController = async (req:Request,res:Response):Promise<void>=>{
     try{
-        const filePath = `/uploads/${req.file?.filename}`;
-        const id = req.body.id;
-        
-        if (!filePath) throw new Error('No se envió ningún archivo');
-        
-        const response = await updateUserProfilePicture(id,filePath)
-        res.status(200).json(response)
+        const {points,id} = req.body
+        if(!points||!id){
+            res.status(400).json("Campos incompletos.")
+        }else{
+            const user = await SumarPuntosService(points,id)
+            
+            res.status(200).send(`Puntos Sumados.`)
+        }
     }catch(error:any){
-        res.status(400).json(error.message)
+        res.status(400).send(error.message)
     }
-};
+}
+
