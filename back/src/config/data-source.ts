@@ -6,12 +6,13 @@ dotenv.config();
 
 export const AppDataSource = new DataSource({
     type: "postgres",
-    url: process.env.DATABASE_URL,  // Usa la URL completa de conexión de la base de datos
-    synchronize: true,              // Sincroniza automáticamente las tablas (en desarrollo)
-    logging: false,                 // Desactiva los logs (cámbialo a true para depuración)
+    url: process.env.DATABASE_URL,  
+    synchronize: true,  
+    logging: false,  
     entities: [User, Credential],
     subscribers: [],
     migrations: [],
+    ssl: { rejectUnauthorized: false } // ✅ Necesario para Railway
 });
 
 // Repositorios para interactuar con las entidades
