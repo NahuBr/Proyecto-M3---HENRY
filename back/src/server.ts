@@ -10,7 +10,7 @@ export const app = express();
 app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 app.use(morgan("dev"))
 const corsOptions = {
-    origin: ["https://proyecto-m3-henry.vercel.app", "http://localhost:5173"],  // Permite tanto el origen de Vercel como el de desarrollo local
+    origin: ["https://proyecto-m3-henry.vercel.app", "http://localhost:5173","https://puntos-coral.vercel.app"],  // Permite tanto el origen de Vercel como el de desarrollo local
     methods: "GET,POST,PUT,DELETE",  // Métodos permitidos
     allowedHeaders: "Content-Type,Authorization",  // Encabezados permitidos
   };
