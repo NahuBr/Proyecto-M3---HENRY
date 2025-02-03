@@ -54,8 +54,8 @@ export const Register = () => {
       <div className={styles.container}>
         <div className={styles.blur}></div>
         <div className={styles.window}>
-          <p className={styles.text}>Registrate al</p>
-          <h3 className={styles.title}>Home Banking</h3>
+          <p className={styles.text}>Registrate a</p>
+          <h3 className={styles.title}>Puntos Coral</h3>
           <div className={styles.subcontainer}>
             <form className={styles.form} onSubmit={handlerRegisterOnSubmit}>
               <div className={styles.input}>

@@ -43,8 +43,8 @@ export const Login = ()=>{
         <>
         <div className={styles.container}>
             <div className={styles.window}>
-                <p className={styles.text}>Bienvenido al</p>
-                <h3 className={styles.title}>Home Banking</h3>
+                <p className={styles.text}>Bienvenido a</p>
+                <h3 className={styles.title}>Puntos Coral</h3>
                 <div className={styles.subcontainer}>
                     <form className={styles.form} onSubmit={handlerLoginOnSubmit}>
                         <div className={styles.input}>

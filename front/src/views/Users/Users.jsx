@@ -49,7 +49,7 @@ export const Users = () => {
 
             if (pointsToAdd === 0) return;
 
-            await axios.put(`http://localhost:3000/users/modificar`, {
+            await axios.put(`https://proyecto-m3-henry-production.up.railway.app/users/modificar`, {
                 points: pointsToAdd,
                 id: id
             });
