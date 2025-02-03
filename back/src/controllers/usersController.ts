@@ -64,7 +64,10 @@ export const loginUser = async (req:Request,res:Response):Promise<void>=>{
 
 export const SumarPuntosController = async (req:Request,res:Response):Promise<void>=>{
     try{
+        console.log(req.body);
+        
         const {points,id} = req.body
+        
         if(!points||!id){
             res.status(400).json("Campos incompletos.")
         }else{

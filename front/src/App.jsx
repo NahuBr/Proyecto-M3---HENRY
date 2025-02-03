@@ -3,8 +3,7 @@ import { Route,Routes } from "react-router-dom"
 import { Register } from "./views/Register/Register"
 import {Home} from "./views/Home/Home"
 import { NavBar } from "./components/NavBar"
-import { MyAppointments } from "./views/MyAppointments/MyAppointments"
-import Profile from "./views/Profile/Profile"
+import { Users } from "./views/Users/Users"
 
 function App() {
 
@@ -16,8 +15,7 @@ function App() {
         <Route path="/home" element={<Home/>}/>
         <Route path="/users/register" element={<Register/>}/>
         <Route path="/" element={<Login/>}/>
-        <Route path="/appointments" element={<MyAppointments/>}/>
-        <Route path="/profile" element={<Profile/>}/>
+        <Route path="/users" element={<Users/>}/>
       </Routes>
     </div>
     </>

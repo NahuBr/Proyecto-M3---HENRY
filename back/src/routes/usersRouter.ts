@@ -11,5 +11,5 @@ usersRouter.get("/users",getUsers)
 usersRouter.get("/users/:id",getUser)
 usersRouter.post("/users/register",verifyUser,registerUser)
 usersRouter.post("/users/login",loginUser)
-usersRouter.post("/puntos/modificar",SumarPuntosController)
+usersRouter.put("/users/modificar",SumarPuntosController)
 
