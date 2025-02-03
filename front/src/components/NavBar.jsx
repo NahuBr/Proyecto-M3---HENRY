@@ -1,7 +1,7 @@
 import styles from "./NavBar.module.css"
 import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
-//import logoImage from '../assets/LogoImage.png';
+import logoImage from '../assets/LogoImage.png';
 import { UserContext } from "../context/UserContext";
 
 export const NavBar = ()=>{
@@ -14,7 +14,7 @@ export const NavBar = ()=>{
   return (
       <>
       <nav className={styles.navbar}>
-      {/* <img className={styles.img} src={logoImage} alt="" /> */}
+      <img className={styles.img} src={logoImage} alt="" />
       <ul className={styles.navLinks}>
         {user && user.name ? ( // Verifica si hay un usuario logueado
             <>
