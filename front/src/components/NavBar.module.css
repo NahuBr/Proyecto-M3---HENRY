@@ -1,11 +1,12 @@
 .navbar{
     display: flex;
     margin: 0;
-    justify-content: end;
+    justify-content: start;
     align-items: center;
     flex-direction: row;
-    height: 10vh;
-    background-color: rgb(48, 117, 138);
+    height: 18vh;
+    background-color: rgb(223, 232, 235);
+    border-bottom: 3px solid rgb(223, 153, 176);
     box-sizing: border-box;
     overflow: hidden;
     z-index: 10;
@@ -29,7 +30,6 @@
 
 .links{
     display: flex;
-    background-color: rgb(48, 117, 138);
     border: none;
     font-size: 15px;
     font-weight: bold;
@@ -43,7 +43,7 @@
     justify-content: center;
     align-items: center;
     text-decoration: none;
-  color: white;
+  color: rgb(0, 0, 0);
     text-align: center;
     width: 100%;
     height: 100%;
@@ -52,5 +52,5 @@
 
 .links a:hover{
     cursor: pointer;
-    color: rgb(0, 195, 255);
+    color: rgb(221, 178, 192);
 }
