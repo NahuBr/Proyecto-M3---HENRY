@@ -42,7 +42,7 @@
 
 .window {
     background-color: rgb(228, 170, 189);
-    width: 500px;
+    width: 450px;
     height: 88px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -71,7 +71,7 @@
 .button {
     width: 400px;
     height: 40px;
-    margin-left: 50px;
+    margin-left: 25px;
     background-color: rgb(228, 170, 189);
     border: none;
     text-align: center;
