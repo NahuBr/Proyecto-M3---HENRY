@@ -19,3 +19,8 @@
     border: none;
     font-weight: bold;
 }
+
+.points{
+    margin: 10px;
+    justify-self: center;
+}

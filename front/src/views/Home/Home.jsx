@@ -25,6 +25,7 @@ export const Home = () => {
 
     return (
         <>
+            <h3 className={styles.points}>Mis Puntos {user.points}</h3>
             <table className={styles.table}>
                 <thead>
                     <tr>
