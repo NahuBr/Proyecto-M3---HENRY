@@ -1,6 +1,7 @@
 import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../context/UserContext";
+import styles from "./Home.module.css";  // Importamos los estilos
 
 export const Home = () => {    
     const navigate = useNavigate();
@@ -26,18 +27,18 @@ export const Home = () => {
         <>
             <h1>Bienvenido/a {user.name}</h1>
 
-            <table>
+            <table className={styles.table}>
                 <thead>
                     <tr>
-                        <th>Puntos</th>
-                        <th>Monto</th>
+                        <th className={styles.th}>Puntos</th>
+                        <th className={styles.th}>Monto</th>
                     </tr>
                 </thead>
                 <tbody>
                     {puntosMontos.map((item, index) => (
                         <tr key={index}>
-                            <td>{item.puntos}</td>
-                            <td>{item.monto}</td>
+                            <td className={styles.td}>{item.puntos}</td>
+                            <td className={styles.td}>{item.monto}</td>
                         </tr>
                     ))}
                 </tbody>
