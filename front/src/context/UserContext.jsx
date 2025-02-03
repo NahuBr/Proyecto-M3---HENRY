@@ -12,7 +12,7 @@ export const UserProvider = ({ children }) => {
   const [user, setUser] = useState({
     name: '',
       email: '',
-      points: '',
+      points: 0,
       id: 0,
       admin: '',
   });
@@ -34,7 +34,7 @@ export const UserProvider = ({ children }) => {
     setUser({
       name: '',
       email: '',
-      points: '',
+      points: 0,
       id: 0,
       admin: '',
     });

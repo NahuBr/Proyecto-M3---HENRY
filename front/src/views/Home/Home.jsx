@@ -25,8 +25,6 @@ export const Home = () => {
 
     return (
         <>
-            <h1>Bienvenido/a {user.name}</h1>
-
             <table className={styles.table}>
                 <thead>
                     <tr>
